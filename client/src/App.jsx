@@ -11,6 +11,7 @@ import { AuthProvider } from '../src/contexts/AuthContext';
 import ProtectedRoute from '../src/routes/ProtectedRoutes';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Aakash from 'components/Aakash';
+// import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export default function Main() {
   const theme = createTheme(); // You can customize this theme object
