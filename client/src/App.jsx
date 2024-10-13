@@ -13,11 +13,11 @@ export default function Main() {
   const [currentTheme, setCurrentTheme] = useState(initialTheme);
 
   return (
-    <AuthProvider>
+   // <AuthProvider>
     <ChakraProvider theme={currentTheme}>
       <Routes>
         <Route path="auth/*" element={<AuthLayout />} />
-        <Route element={<ProtectedRoute />}>
+        <Route>
           <Route
             path="admin/*"
             element={
@@ -35,6 +35,6 @@ export default function Main() {
         <Route path="*" element={<Navigate to="/auth/sign-in" replace />} />
       </Routes>
     </ChakraProvider>
-  </AuthProvider>
+  //</AuthProvider>
   );
 }
