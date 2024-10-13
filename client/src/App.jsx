@@ -9,16 +9,22 @@ import Harsh from './components/Harsh';
 import { useState } from 'react';
 import { AuthProvider } from '../src/contexts/AuthContext';
 import ProtectedRoute from '../src/routes/ProtectedRoutes';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Aakash from 'components/Aakash';
+// import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export default function Main() {
+  const theme = createTheme(); // You can customize this theme object
   const [currentTheme, setCurrentTheme] = useState(initialTheme);
 
   return (
+    <ThemeProvider theme={theme}>
     <AuthProvider>
     <ChakraProvider theme={currentTheme}>
       <Routes>
 
       <Route path="harsh" element={<Harsh />} />
+      <Route path="aakash" element={<Aakash />} />
         <Route path="auth/*" element={<AuthLayout />} />
         <Route element={<ProtectedRoute />}>
           <Route
@@ -39,5 +45,6 @@ export default function Main() {
       </Routes>
     </ChakraProvider>
   </AuthProvider>
+  </ThemeProvider>
   );
 }
