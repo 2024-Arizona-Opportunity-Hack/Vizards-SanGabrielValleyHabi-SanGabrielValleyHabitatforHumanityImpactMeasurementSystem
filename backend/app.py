@@ -3,9 +3,12 @@ import jwt
 import datetime
 from flask_bcrypt import Bcrypt
 import sqlite3
+from flask_cors import CORS
+
 
 
 app = Flask(__name__)
+CORS(app)
 bcrypt = Bcrypt(app)
 app.config['SECRET_KEY'] = 'CnYHzHDj6ovNvtgUfzSvjOJYJzHmFUs9'  # Replace this with a strong key
 
@@ -31,6 +34,7 @@ def get_user_by_email(email):
 # Signup route
 @app.route('/signup', methods=['POST'])
 def signup():
+    
     data = request.get_json()
     email = data.get('email')
     password = data.get('password')
@@ -47,12 +51,17 @@ def signup():
         conn.close()
         return jsonify({"message": "User registered successfully!"}), 201
     except sqlite3.IntegrityError:
+        print("email already exists")
         return jsonify({"message": "email already exists"}), 409
+    except Exception as e:
+        print(e)
+        return jsonify({"message": "Something went wrong"}), 500
 
 # Login route
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
+    print(data)
     email = data.get('email')
     password = data.get('password')
 
@@ -70,6 +79,11 @@ def login():
     }, app.config['SECRET_KEY'], algorithm='HS256')
 
     return jsonify({'token': token})
+
+# health check
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify({'message': 'Healthy!'})
 
 # Protected route
 @app.route('/protected', methods=['GET'])
