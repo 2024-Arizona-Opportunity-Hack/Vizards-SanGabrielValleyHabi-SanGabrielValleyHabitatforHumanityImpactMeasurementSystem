@@ -12,25 +12,25 @@ import {
 // Admin Imports
 import MainDashboard from 'views/admin/default';
 import NFTMarketplace from 'views/admin/marketplace';
-import Profile from 'views/admin/profile';
 import DataTables from 'views/admin/dataTables';
 import Logout from 'views/auth/logout';
+import Survey1 from 'views/admin/survey1';
 
 // Auth Imports
 import SignInCentered from 'views/auth/signIn';
 
 const routes = [
   {
-    name: 'Main Dashboard',
+    name: 'Dashboard',
     layout: '/admin',
     path: '/default',
     icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
     component: <MainDashboard />,
   },
   {
-    name: 'NFT Marketplace',
+    name: 'Survey 1',
     layout: '/admin',
-    path: '/nft-marketplace',
+    path: '/survey1',
     icon: (
       <Icon
         as={MdOutlineShoppingCart}
@@ -39,15 +39,8 @@ const routes = [
         color="inherit"
       />
     ),
-    component: <NFTMarketplace />,
+    component: <Survey1 />,
     secondary: true,
-  },
-  {
-    name: 'Data Tables',
-    layout: '/admin',
-    icon: <Icon as={MdBarChart} width="20px" height="20px" color="inherit" />,
-    path: '/data-tables',
-    component: <DataTables />,
   },
   {
     name: 'Profile',
@@ -60,7 +53,7 @@ const routes = [
     name: 'Logout',
     layout: '/auth',
     path: '/logout',
-    icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
+    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
     component: <Logout />,
   },
 ];
