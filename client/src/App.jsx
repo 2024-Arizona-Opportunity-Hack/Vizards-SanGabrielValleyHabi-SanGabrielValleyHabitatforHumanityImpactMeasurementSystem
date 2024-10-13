@@ -5,6 +5,7 @@ import AdminLayout from './layouts/admin';
 import RTLLayout from './layouts/rtl';
 import { ChakraProvider } from '@chakra-ui/react';
 import initialTheme from './theme/theme';
+import Harsh from './components/Harsh';
 import { useState } from 'react';
 import { AuthProvider } from '../src/contexts/AuthContext';
 import ProtectedRoute from '../src/routes/ProtectedRoutes';
@@ -16,6 +17,8 @@ export default function Main() {
     <AuthProvider>
     <ChakraProvider theme={currentTheme}>
       <Routes>
+
+      <Route path="harsh" element={<Harsh />} />
         <Route path="auth/*" element={<AuthLayout />} />
         <Route element={<ProtectedRoute />}>
           <Route
