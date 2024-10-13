@@ -15,6 +15,7 @@ import VolunteerHoursBarChart from "./components/VolunteerHoursBarChart";
 import MiniStatistics from "components/card/MiniStatistics";
 import IconBox from "components/icons/IconBox";
 import banner from "assets/img/auth/banner.png";
+import axios from "axios";
 
 import { Button, Flex, Link, Text } from "@chakra-ui/react";
 
@@ -28,6 +29,7 @@ export default function Settings() {
   useEffect(() => {
     setllmanswer("There are 100 volunteers");
   }, []);
+
   // Chakra Color Mode
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
@@ -133,6 +135,43 @@ export default function Settings() {
             
           />
         </div>
+        <div onClick={() => window.open("https://docs.google.com/spreadsheets/d/1i6ZF2sleWPuZp7veKNiuQnQQ59Q7xqLFjiegvyTgzyM/edit?usp=sharing")}>
+          <MiniStatistics
+            startContent={
+              <IconBox
+                w='56px'
+                h='56px'
+                bg={boxBg}
+                icon={
+                  <Icon w='32px' h='32px' as={MdRemoveRedEye} color={brandColor} />
+                }
+              />
+            }
+            name=''
+            value='Upload Bulk Entries'
+            
+          />
+        </div>
+
+        <div onClick={() => window.open("https://docs.google.com/spreadsheets/d/1i6ZF2sleWPuZp7veKNiuQnQQ59Q7xqLFjiegvyTgzyM/edit?usp=sharing")}>
+          <MiniStatistics
+            startContent={
+              <IconBox
+                w='56px'
+                h='56px'
+                bg={boxBg}
+                icon={
+                  <Icon w='32px' h='32px' as={MdRemoveRedEye} color={brandColor} />
+                }
+              />
+            }
+            name=''
+            value='View Data'
+            
+          />
+        </div>
+        
+        
       </SimpleGrid>
       <SimpleGrid
         mb='20px'
