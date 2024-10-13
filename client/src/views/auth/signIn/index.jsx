@@ -22,7 +22,7 @@
 */
 
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../contexts/AuthContext";
 // Chakra imports
@@ -59,7 +59,16 @@ function SignIn() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { setToken } = useAuth();
+  
+  const { token, setToken } = useAuth();
+
+  // if already logged in go to dashboard
+
+  useEffect(() => {
+    if (token !== null) {
+      navigate('/admin/default');
+    }
+  }, [token, navigate]);
 
 
   const handleLogin = async (e) => {
