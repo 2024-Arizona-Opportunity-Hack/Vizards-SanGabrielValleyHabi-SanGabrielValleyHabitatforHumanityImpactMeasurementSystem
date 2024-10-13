@@ -27,7 +27,6 @@ import { NavLink } from "react-router-dom";
 import {
   Box,
   Button,
-  Checkbox,
   Flex,
   FormControl,
   FormLabel,
@@ -40,11 +39,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 // Custom components
-import { HSeparator } from "components/separator/Separator";
 import DefaultAuth from "layouts/auth/Default";
 // Assets
 import illustration from "assets/img/auth/auth.png";
-import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
 
@@ -104,7 +101,7 @@ function SignIn() {
           mx={{ base: "auto", lg: "unset" }}
           me='auto'
           mb={{ base: "20px", md: "auto" }}>
-          <Button
+          {/* <Button
             fontSize='sm'
             me='0px'
             mb='26px'
@@ -119,14 +116,14 @@ function SignIn() {
             _focus={googleActive}>
             <Icon as={FcGoogle} w='20px' h='20px' me='10px' />
             Sign in with Google
-          </Button>
-          <Flex align='center' mb='25px'>
+          </Button> */}
+          {/* <Flex align='center' mb='25px'>
             <HSeparator />
             <Text color='gray.400' mx='14px'>
               or
             </Text>
             <HSeparator />
-          </Flex>
+          </Flex> */}
           <FormControl>
             <FormLabel
               display='flex'
@@ -143,7 +140,7 @@ function SignIn() {
               fontSize='sm'
               ms={{ base: "0px", md: "0px" }}
               type='email'
-              placeholder='mail@simmmple.com'
+              placeholder='test@mail.com'
               mb='24px'
               fontWeight='500'
               size='lg'
@@ -177,21 +174,21 @@ function SignIn() {
             </InputGroup>
             <Flex justifyContent='space-between' align='center' mb='24px'>
               <FormControl display='flex' alignItems='center'>
-                <Checkbox
+                {/* <Checkbox
                   id='remember-login'
                   colorScheme='brandScheme'
                   me='10px'
-                />
-                <FormLabel
+                /> */}
+                {/* <FormLabel
                   htmlFor='remember-login'
                   mb='0'
                   fontWeight='normal'
                   color={textColor}
                   fontSize='sm'>
                   Keep me logged in
-                </FormLabel>
+                </FormLabel> */}
               </FormControl>
-              <NavLink to='/auth/forgot-password'>
+              {/* <NavLink to='/auth/forgot-password'>
                 <Text
                   color={textColorBrand}
                   fontSize='sm'
@@ -199,7 +196,7 @@ function SignIn() {
                   fontWeight='500'>
                   Forgot password?
                 </Text>
-              </NavLink>
+              </NavLink> */}
             </Flex>
             <Button
               fontSize='sm'
