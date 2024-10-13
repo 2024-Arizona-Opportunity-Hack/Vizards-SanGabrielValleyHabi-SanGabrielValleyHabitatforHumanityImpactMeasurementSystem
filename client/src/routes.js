@@ -28,16 +28,11 @@ const routes = [
     component: <MainDashboard />,
   },
   {
-    name: 'Survey 1',
+    name: 'Volunteer Survey',
     layout: '/admin',
     path: '/survey1',
     icon: (
-      <Icon
-        as={MdOutlineShoppingCart}
-        width="20px"
-        height="20px"
-        color="inherit"
-      />
+      <Icon as={MdPerson} width="20px" height="20px" color="inherit" />
     ),
     component: <Survey1 />,
     secondary: true,
