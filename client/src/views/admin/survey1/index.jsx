@@ -1,71 +1,103 @@
-/*!
-  _   _  ___  ____  ___ ________  _   _   _   _ ___   
- | | | |/ _ \|  _ \|_ _|__  / _ \| \ | | | | | |_ _| 
- | |_| | | | | |_) || |  / / | | |  \| | | | | || | 
- |  _  | |_| |  _ < | | / /| |_| | |\  | | |_| || |
- |_| |_|\___/|_| \_\___/____\___/|_| \_|  \___/|___|
-                                                                                                                                                                                                                                                                                                                                       
-=========================================================
-* Horizon UI - v1.1.0
-=========================================================
 
-* Product Page: https://www.horizon-ui.com/
-* Copyright 2023 Horizon UI (https://www.horizon-ui.com/)
-
-* Designed and Coded by Simmmple
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-// Chakra imports
 import {
-  MdAddTask,
-  MdAttachMoney,
-  MdBarChart,
-  MdFileCopy,
   MdEdit,
   MdRemoveRedEye,
 } from "react-icons/md";
-import { Avatar,
+import {
   Box,
-  Flex,
-  FormLabel,
   Icon,
-  Select,
+  Input,
   SimpleGrid,
   useColorModeValue, } from "@chakra-ui/react";
-import DevelopmentTable from "views/admin/survey1/components/DevelopmentTable";
-import CheckTable from "views/admin/survey1/components/CheckTable";
-import ColumnsTable from "views/admin/survey1/components/ColumnsTable";
-import ComplexTable from "views/admin/survey1/components/ComplexTable";
-import {
-  columnsDataDevelopment,
-  columnsDataCheck,
-  columnsDataColumns,
-  columnsDataComplex,
-} from "views/admin/survey1/variables/columnsData";
-import tableDataDevelopment from "views/admin/survey1/variables/tableDataDevelopment.json";
-import tableDataCheck from "views/admin/survey1/variables/tableDataCheck.json";
-import tableDataColumns from "views/admin/survey1/variables/tableDataColumns.json";
-import tableDataComplex from "views/admin/survey1/variables/tableDataComplex.json";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import VolunteerHoursPieChart from "./components/VolunteerHoursPieChart";
 import VolunteerHoursBarChart from "./components/VolunteerHoursBarChart";
 import MiniStatistics from "components/card/MiniStatistics";
 import IconBox from "components/icons/IconBox";
+import banner from "assets/img/auth/banner.png";
+
+import { Button, Flex, Link, Text } from "@chakra-ui/react";
+
 export default function Settings() {
 
   const brandColor = useColorModeValue("brand.500", "white");
   const boxBg = useColorModeValue("secondaryGray.300", "whiteAlpha.100");
+
+  const [llmanswer, setllmanswer] = useState(null);
+  
+  useEffect(() => {
+    setllmanswer("There are 100 volunteers");
+  }, []);
   // Chakra Color Mode
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
+
+<SimpleGrid
+        columns={{ base: 1, md: 1, lg: 1, "2xl": 1 }}
+        gap='20px'
+        mb='20px'>
+<Flex
+      direction='column'
+      bgImage={banner}
+      bgSize='cover'
+      py={{ base: "30px", md: "56px" }}
+      px={{ base: "30px", md: "64px" }}
+      borderRadius='30px'>
+      <Text
+        fontSize={{ base: "24px", md: "34px" }}
+        color='white'
+        mb='14px'
+        maxW={{
+          base: "100%",
+          md: "64%",
+          lg: "46%",
+          xl: "70%",
+          "2xl": "50%",
+          "3xl": "42%",
+        }}
+        fontWeight='700'
+        lineHeight={{ base: "32px", md: "42px" }}>
+        Give Natural Language Query!
+      </Text>
+      <Input
+          isRequired={true}
+          variant='auth'
+          fontSize='sm'
+
+          ms={{ base: "0px", md: "0px" }}
+          type='email'
+          placeholder='How many volunteers are there?'
+          mb='24px'
+          fontWeight='500'
+          size='lg'
+          color='white'
+        />
+      {
+        llmanswer && <Text color='white' fontWeight='bold' fontSize='xl' mb='20px'>{llmanswer}</Text>
+      }
+      <Flex align='center'>
+        <Button
+          bg='white'
+          color='black'
+          _hover={{ bg: "whiteAlpha.900" }}
+          _active={{ bg: "white" }}
+          _focus={{ bg: "white" }}
+          fontWeight='500'
+          fontSize='14px'
+          py='20px'
+          px='27'
+          me='38px'>
+          Get Answer
+        </Button>
+      </Flex>
+    </Flex>
+    </SimpleGrid>
       <SimpleGrid
         columns={{ base: 1, md: 2, lg: 2, "2xl": 2 }}
         gap='20px'
         mb='20px'>
+
+
         
         <div onClick={() => window.open("https://forms.gle/aSLSrj4p9Y2ugSRA9")}>
         <MiniStatistics
@@ -109,6 +141,10 @@ export default function Settings() {
 
       <VolunteerHoursPieChart/>
       <VolunteerHoursBarChart/>
+
+     
+
+      
        
       </SimpleGrid>
     </Box>

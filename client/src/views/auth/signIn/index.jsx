@@ -44,7 +44,7 @@ function SignIn() {
 
   useEffect(() => {
     if (token !== null) {
-      navigate('/admin/default');
+      navigate('/admin/survey1');
     }
   }, [token, navigate]);
 
@@ -67,9 +67,8 @@ function SignIn() {
       console.log(data);
   
       if (response.ok) {
-        console.log('fuck you');
         setToken(data.token); // Store the token using the login function from AuthContext
-        navigate('/admin/default'); // Redirect to admin page or dashboard
+        navigate('/admin/survey1'); // Redirect to admin page or dashboard
       } else {
         setError(data.message || 'Login failed. Please try again.');
       }
