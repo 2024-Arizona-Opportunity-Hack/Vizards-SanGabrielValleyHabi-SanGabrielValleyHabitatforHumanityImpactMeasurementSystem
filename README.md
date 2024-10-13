@@ -1,4 +1,3 @@
-
 # 2024_fall Hackathon Project
 
 ## Quick Links
@@ -6,63 +5,40 @@
 - [Team Slack Channel](https://opportunity-hack.slack.com/app_redirect?channel=dev-tao-ka-samuha)
 - [Nonprofit Partner](https://ohack.dev/nonprofit/FUSQQIaQF70ocwcatH9T)
 - [Problem Statement](https://ohack.dev/project/pcDVx7FAHQvZSViHbgS7)
+- [Devpost Link](https://devpost.com/software/the-vizards)
+- [Youtube demo Link](https://www.youtube.com/watch?v=DMXT_8Ei8Hg)
 
 ## Creator
 @Sahil Yogesh Hadke (on Slack)
 
 ## Team "Vizards"
-- [Team Member 1](GitHub profile link)
-- [Team Member 2](GitHub profile link)
-- [Team Member 3](GitHub profile link)
-<!-- Add all team members -->
+ - Sahil Yogesh hadke (https://github.com/sahilhadke) 
+- Amit Raj Reddy (https://github.com/Ames-Zero)
+- Harsh Vaishya (https://github.com/VHarshB)
+- Aakash Gangji (https://github.com/aakashgangji)
 
 ## Project Overview
-Brief description of your project and its goals.
+The CRM solution developed for San Gabriel Valley Habitat for Humanity addresses the nonprofit's longstanding challenges with data management and impact measurement. This comprehensive system integrates multiple data sources into a cohesive platform, featuring a dynamic dashboard for real-time insights, a multi-faceted survey system, and an innovative chatbot for instant data queries. Built using cost-effective tools like Google Sheets and Data Studio, the cloud-deployed solution ensures data security through robust encryption and role-based access. By streamlining data collection, enhancing volunteer and homeowner engagement, and providing accessible analytics, this CRM empowers the organization to more effectively serve their community, ultimately helping more families achieve stability and self-reliance through affordable housing initiatives.
 
 ## Tech Stack
-- Frontend: 
-- Backend: 
-- Database: 
-- APIs: 
-<!-- Add/modify as needed -->
+- Frontend: React
+- Backend: Python
+- Database: SQLite
+- APIs: Flask
 
 
 ## Getting Started
-Instructions on how to set up and run your project locally.
-
 ```bash
 # Example commands
-git clone [your-repo-link]
-cd [your-repo-name]
-npm install
+git clone https://github.com/2024-Arizona-Opportunity-Hack/Vizards-SanGabrielValleyHabi-SanGabrielValleyHabitatforHumanityImpactMeasurementSystem.git vizard
+cd vizard
+npm install 
 npm start
 ```
-
-
-## Your next steps
-1. ✅ Add everyone on your team to your GitHub repo like [this video posted in our Slack channel](https://opportunity-hack.slack.com/archives/C1Q6YHXQU/p1605657678139600)
-2. ✅ Create your DevPost project [like this video](https://youtu.be/vCa7QFFthfU?si=bzMQ91d8j3ZkOD03)
-3. ✅ Use the [2024 DevPost](https://opportunity-hack-2024-arizona.devpost.com) to submit your project
-4. ✅ Your DevPost final submission demo video should be 4 minutes or less
-5. ✅ Review the judging criteria on DevPost
-
-# What should your final Readme look like?
-Your readme should be a one-stop-shop for the judges to understand your project. It should include:
-- Team name
-- Team members
-- Slack channel
-- Problem statement
-- Tech stack
-- Link to your DevPost project
-- Link to your final demo video
-- Any other information you think is important
-
-You'll use this repo as your resume in the future, so make it shine! 🌟
-
-Examples of stellar readmes:
-- ✨ [2019 Team 3](https://github.com/2019-Arizona-Opportunity-Hack/Team-3)
-- ✨ [2019 Team 6](https://github.com/2019-Arizona-Opportunity-Hack/Team-6)
-- ✨ [2020 Team 2](https://github.com/2020-opportunity-hack/Team-02)
-- ✨ [2020 Team 4](https://github.com/2020-opportunity-hack/Team-04)
-- ✨ [2020 Team 8](https://github.com/2020-opportunity-hack/Team-08)
-- ✨ [2020 Team 12](https://github.com/2020-opportunity-hack/Team-12)
+For starting up the backend API's:
+```bash
+# setting up the API
+cd vizard/Backend
+pip install -r requirements.txt
+flask run #or even python3 app.py
+```
