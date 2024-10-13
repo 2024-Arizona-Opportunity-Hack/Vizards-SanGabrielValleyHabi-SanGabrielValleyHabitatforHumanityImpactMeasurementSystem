@@ -7,9 +7,9 @@ function Harsh() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const sheetId = '1ceDwJ2rTLsuuKx9JleHpP6c96W4nPS5aGc5lytAOBqo';
-      const apiKey = 'AIzaSyDoj9PJ_CdeWk__NgC4nVH516VH0KRC0fY';
-      const sheetName = 'Sheet1';
+      const sheetId = '1XcKfQcBAgM1KdFarF5gVTz-zS54Tf0iw9Rmu4LqbDO4';
+      const apiKey = 'AIzaSyD-RTPxDj0oTnzzGcEKsoSlLC2_sSN0Jjk';
+      const sheetName = 'Form responses 1';
       const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${sheetName}?key=${apiKey}`;
 
       try {
