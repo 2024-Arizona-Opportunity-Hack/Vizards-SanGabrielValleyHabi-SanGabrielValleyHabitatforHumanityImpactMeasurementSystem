@@ -4,6 +4,9 @@ import {} from 'react-router-dom';
 import AuthLayout from './layouts/auth';
 import AdminLayout from './layouts/admin';
 import RTLLayout from './layouts/rtl';
+
+import { AuthProvider } from '../src/contexts/AuthContext';
+import ProtectedRoute from '../src/routes/ProtectedRoutes';
 import {
   ChakraProvider,
   // extendTheme
